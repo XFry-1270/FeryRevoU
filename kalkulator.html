@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device=width , user-scalable=no">
+    <title> KALKULATOR by fery</title>
+        <style>
+            *{
+                user-select: none;
+            }
+            table{
+                margin: auto;
+                border: 1px solid gray;
+            }
+            button{
+                width: 100%;
+                border: none;
+            }
+            button:active{
+                background-color: gray;
+                box-shadow: 1px 1px 1px black
+            }
+            .red{
+                background-color: red;
+                color: white;
+            }
+            .blue{
+                background-color: blue;
+                color: white;
+            }
+            .orange{
+                background-color: orange;
+                color: white;
+            }
+            .black{
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th colspan="4"><input type="text" name="display" class="display"></th>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="red ac">AC</button></td>
+                <td><button class="blue c" onclick="display.value">C</button></td>
+                <td><button class="orange kali">*</button></td>
+            </tr>
+            <tr>
+                <td><button class="satu">1</button></td>
+                <td><button class="dua">2</button></td>
+                <td><button class="tiga">3</button></td>
+                <td><button class="orange bagi">/</button></td>
+            </tr>
+            <tr>
+                <td><button class="empat">4</button></td>
+                <td><button class="lima">5</button></td>
+                <td><button class="enam">6</button></td>
+                <td><button class="orange kurang">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="tujuh">7</button></td>
+                <td><button class="delapan">8</button></td>
+                <td><button class="sembilan">9</button></td>
+                <td><button class="orange tambah">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="black double" >00</button></td>
+                <td><button class="black zero">0</button></td>
+                <td><button class="orange koma">.</button></td>
+                <td><button class="orange jumlah">=</button></td>
+            </tr>
+        </table>
+
+        <script>
+            let display = document.querySelector('.display');
+            //  angka/number
+            let satu = document.querySelector('.satu');
+            let dua = document.querySelector('.dua');
+            let tiga = document.querySelector('.tiga');
+            let empat = document.querySelector('.empat');
+            let lima = document.querySelector('.lima');
+            let enam = document.querySelector('.enam');
+            let tujuh = document.querySelector('.tujuh');
+            let delapan = document.querySelector('.delapan');
+            let sembilan = document.querySelector('.sembilan');
+            let double = document.querySelector('.double');
+            let zero = document.querySelector('.zero');
+
+            satu.addEventListener('click',function(){
+                display.value+=1;
+            })
+            dua.addEventListener('click',function(){
+                display.value+=2;
+            })
+            tiga.addEventListener('click',function(){
+                display.value+=3;
+            })
+            empat.addEventListener('click',function(){
+                display.value+=4;
+            })
+            lima.addEventListener('click',function(){
+                display.value+=5;
+            })
+            enam.addEventListener('click',function(){
+                display.value+=6;
+            })
+            tujuh.addEventListener('click',function(){
+                display.value+=7;
+            })
+            delapan.addEventListener('click',function(){
+                display.value+=8;
+            })
+            sembilan.addEventListener('click',function(){
+                display.value+=9;
+            })
+            double.addEventListener('click',function(){
+                display.value+="00";
+            })
+            zero.addEventListener('click',function(){
+                display.value+=0;
+            })
+            //  end angka/number 
+
+            // operator
+        document.querySelector('.ac').addEventListener('click',function(){
+            display.value='';
+        })
+        document.querySelector('.c').addEventListener('click',function(){
+            display.value=display.value.toString().slice(0,-1);
+        })
+        document.querySelector('.jumlah').addEventListener('click',function(){
+            display.value = eval(display.value) ;
+        })
+        document.querySelector('.tambah').addEventListener('click',function(){
+            display.value +='+';
+        })
+        document.querySelector('.kurang').addEventListener('click',function(){
+            display.value +='-';
+        })
+        document.querySelector('.bagi').addEventListener('click',function(){
+            display.value +='/';
+        })
+        document.querySelector('.kali').addEventListener('click',function(){
+            display.value +='*';
+        })
+        document.querySelector('.koma').addEventListener('click',function(){
+            display.value +='.';
+        })
+        console.log("1+1");
+        </script>
+    </body>
+</html>
